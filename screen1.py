@@ -56,6 +56,8 @@ class Screen1(Screen):
         
         else:
             list_removable = listdir('/media/pi/')
+            if "SETTINGS" in list_removable:
+                list_removable.pop(list_removable.index("SETTINGS"))
             if len(list_removable) == 0:
                 self.button_l.text = 'Reload'
                 self.media_status.text = 'No external storage detected'
